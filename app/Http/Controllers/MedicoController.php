@@ -34,7 +34,6 @@ public function __construct(Medico $medico){
     	
 
     	 $dataForm = $request->except('_token');
-
     	 $insert = $this->medico->create($dataForm);
     	 if($insert)
     	 	return redirect()->route('medico.index');
