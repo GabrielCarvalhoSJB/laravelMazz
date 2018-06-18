@@ -1,0 +1,44 @@
+// agendamazza:
+//testemazza
+
+//===========TABELAS=============
+tb_usuario;
+tb_paciente;
+tb_medicos;
+tb_agendamento;
+//============CRIAÇÃO TABELAS======
+ php artisan make:migration create_tb_paciente_table
+
+ php artisan make:migration create_tb_usuario_table
+
+ php artisan make:migration create_tb_medicos_table
+
+ php artisan make:migration create_tb_agendamento_table
+
+ Schema::create('tb_paciente', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('endereco');
+            $table->integer('telefone');
+            $table->date('dt_consulta');
+            $table->timestamps();
+
+            Schema::create('tb_usuario', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->timestamps();
+
+            Schema::create('tb_medicos', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('telefone')->nullable();
+            $table->time('horas');
+            $table->dateTime('dt_consulta');
+            $table->timestamps();
+
+             Schema::create('tb_agendamento', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('telefone');
+            $table->date('dt_consulta');
+            $table->timestamps();
